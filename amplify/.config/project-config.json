@@ -1,5 +1,8 @@
 {
-    "projectName": "SurveyPWA",
+    "providers": [
+        "awscloudformation"
+    ],
+    "projectName": "aws-appsync-survey-tool",
     "version": "2.0",
     "frontend": "javascript",
     "javascript": {
@@ -10,8 +13,5 @@
             "BuildCommand": "npm run-script build",
             "StartCommand": "npm run-script start"
         }
-    },
-    "providers": [
-        "awscloudformation"
-    ]
+    }
 }

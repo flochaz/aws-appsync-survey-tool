@@ -2,9 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './components/app';
-import * as serviceWorker from './serviceWorker';
 
-import { Auth, Analytics } from 'aws-amplify';
+import { Auth, Analytics, ServiceWorker } from 'aws-amplify';
+await serviceWorker.register('/serviceWorker.js', '/');
+serviceWorker.enablePush('AAAAkid8Fy4:APA91bGyhaZQIiimsHsUfFswAcKyJ6GII7hmr_wH09EVjGMv7t04eWfYG98HJLRU07KoNybUUXfLjzRvKYsD61Gb7K-oW88ezqOAv3lRlLs0zKFP_O5k0Myjb5MYn5ZvbXbPIWH-qBkx');
+
 import AWSAppSyncClient, { AUTH_TYPE, createAppSyncLink, createLinkWithCache } from 'aws-appsync';
 import awsexports from './aws-exports';
 import { ApolloProvider } from 'react-apollo';
@@ -46,6 +48,18 @@ Analytics.autoTrack('event', {
     selectorPrefix: 'data-amplify-analytics-',
     provider: 'AWSPinpoint'
 });
+
+const analyticsConfig = {
+    AWSPinpoint: {
+          // Amazon Pinpoint App Client ID
+          appId: '2a7aa42f825844c09aa3c8db1b038843',
+          // Amazon service region
+          region: 'us-west-2',
+          mandatorySignIn: false,
+    }
+  }
+  
+  Analytics.configure(analyticsConfig)
 
 ReactDOM.render(
     <ApolloProvider client={client}>

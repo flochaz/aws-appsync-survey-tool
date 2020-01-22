@@ -98,11 +98,11 @@
 						"Arn"
 					]
 				},
-				"Runtime": "nodejs8.10",
+				"Runtime": "nodejs10.x",
 				"Timeout": "25",
 				"Code": {
-					"S3Bucket": "surveypwa-dev-20190605134212-deployment",
-					"S3Key": "amplify-builds/surveypwa1a7615c6PostConfirmation-352b4c326e6135635756-build.zip"
+					"S3Bucket": "amplify-surveypwa-devj-93651-deployment",
+					"S3Key": "amplify-builds/surveypwa1a7615c6PostConfirmation-70386262766165754830-build.zip"
 				}
 			}
 		},

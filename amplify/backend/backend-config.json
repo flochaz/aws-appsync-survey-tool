@@ -37,5 +37,13 @@
             "providerPlugin": "awscloudformation",
             "build": true
         }
+    },
+    "notifications": {
+        "surveypwa": {
+            "service": "Pinpoint",
+            "channels": [
+                "FCM"
+            ]
+        }
     }
 }
